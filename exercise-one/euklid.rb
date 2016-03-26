@@ -20,7 +20,7 @@ end
 # Main function
 if valid_input(@a, @b)
   a_larger_b
-  check = calculate_gcd(@a, @b)
+  calculate_gcd(@a, @b)
   r = -1 # initial value to define error in calculation
   loop do
     r = @a % @b
