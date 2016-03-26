@@ -13,12 +13,17 @@ def valid_input(a, b)
   ( a*a + b*b ) != 0
 end
 
+def a_b_positive
+  @a, @b = @a.abs, @b.abs
+end
+
 def a_larger_b
   @a, @b = @b, @a if @b > @a
 end
 
 # Main function
 if valid_input(@a, @b)
+  a_b_positive
   a_larger_b
   calculate_gcd(@a, @b)
   r = -1 # initial value to define error in calculation
