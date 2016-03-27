@@ -16,3 +16,17 @@ a: 24 b: 18 r: 6 y: 1
 a: 18 b: 6 r: 0 y: 3
 ggT(234, 678): 6
 ```
+#### Aufgabe b)
+##### Usage
+`ruby extended_euklid.rb zahl1 zahl2`
+##### Example
+```
+$ ruby extended_euklid.rb 128 34
+a: 128 b: 34
+Step: r: [128, 34, 26] q: [3]
+Step: r: [128, 34, 26, 8] q: [3, 1]
+Step: r: [128, 34, 26, 8, 2] q: [3, 1, 3]
+Step: r: [128, 34, 26, 8, 2, 0] q: [3, 1, 3, 4]
+x: 4
+y: -15
+```
