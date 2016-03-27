@@ -22,7 +22,11 @@ def a_larger_b
 end
 
 def diophant_solved(x, y)
-  calculate_gcd(@a, @b) == ( @a*x + @b*y)
+  calculate_gcd(@a, @b) == ( @a*x + @b*y )
+end
+
+def calculate_inverse(x, et)
+  x % et
 end
 
 def extended_euklid
@@ -41,8 +45,10 @@ def extended_euklid
     puts "Step: r: #{r} q: #{q.compact}"
     break if diophant_solved(k[index], (r[index] - k[index] * @a) / @b)
   end
-  puts "x: #{k[index]}"
-  puts "y: #{(r[index] - k[index] * @a) / @b}"
+  y = (r[index] - k[index] * @a) / @b
+  puts "x: #{k[index]}, y: #{y}"
+  # calculate inverse if gcd is 1
+  puts "Inverse found: #{calculate_inverse(y, @a)}" if calculate_gcd(@a, @b) == 1
 end
 
 # Main function
