@@ -14,15 +14,15 @@ loop do
   if binary[array_size - n] == "1"
     faktor_new = faktor_last if n == 1
     faktor_new = (faktor_last * faktor_last) % @modulos if n > 1
-    erg_buffer[1] = erg_buffer[0] * faktor_new % @modulos
+    erg_buffer[1] = (erg_buffer[0] * faktor_new) % @modulos
   else
-    faktor_new = faktor_last if n == "1"
+    faktor_new = faktor_last if n == 1
     faktor_new = (faktor_last * faktor_last) % @modulos if n > 1
-    erg_buffer[1] = erg_buffer[0]
+    erg_buffer[0] = erg_buffer[1]
   end
-  puts n
-  break if n > array_size
+  faktor_new, faktor_last = faktor_last, faktor_new
   n = n + 1
+  break if n > array_size
 end
 
-puts erg_buffer.inspect
+puts "#{@basis}^#{@exponent} mod #{@modulos} = #{erg_buffer[1]}"
